@@ -11,17 +11,37 @@ class SketchPad{
 
     this.ctx = this.canvas.getContext("2d");
 
+    this.path = [];
+    this.isDrawing = false;
+
     this.#addEventListener();
   }
 
     #addEventListener(){
-      this.canvas.onmousedown= (evt) => {
+      this.canvas.onmousedown = (e) => {
         const rect = this.canvas.getBoundingClientRect();
         const mouse = [
-          Math.round(evt.clientX-rect.left),
-          Math.round(evt.clientY-rect.top),
+          Math.round(e.clientX-rect.left),
+          Math.round(e.clientY-rect.top),
         ];
-        console.log(mouse);
+        this.path = [mouse];
+        this.isDrawing = true;
       };
+
+      this.canvas.onmousemove = (e) => {
+        if(this.isDrawing) {
+          const rect = this.canvas.getBoundingClientRect();
+          const mouse = [
+            Math.round(e.clientX-rect.left),
+            Math.round(e.clientY-rect.top),
+          ];
+          this.path.push(mouse);
+          console.log(this.path.length)
+        }
+      };
+
+      this.canvas.onmouseup = () => {
+        this.isDrawing = false;
+      }
     }
   }
