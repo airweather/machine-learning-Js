@@ -28,13 +28,17 @@ class SketchPad{
         if(this.isDrawing) {
           const mouse = this.#getMouse(e);
           this.path.push(mouse);
-          console.log(this.path.length)
+          this.#redraw();
         }
       };
 
       this.canvas.onmouseup = () => {
         this.isDrawing = false;
       }
+    }
+
+    #redraw = () => {
+      
     }
 
     #getMouse = (e) => {
