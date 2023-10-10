@@ -38,7 +38,9 @@ class SketchPad{
     }
 
     #redraw = () => {
-      
+      this.ctx.clearRect(0, 0,
+        this.canvas.width, this.canvas.height);
+      draw.path(this.ctx, this.path)
     }
 
     #getMouse = (e) => {
