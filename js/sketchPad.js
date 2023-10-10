@@ -19,22 +19,14 @@ class SketchPad{
 
     #addEventListener(){
       this.canvas.onmousedown = (e) => {
-        const rect = this.canvas.getBoundingClientRect();
-        const mouse = [
-          Math.round(e.clientX-rect.left),
-          Math.round(e.clientY-rect.top),
-        ];
+        const mouse = this.#getMouse(e);
         this.path = [mouse];
         this.isDrawing = true;
       };
 
       this.canvas.onmousemove = (e) => {
         if(this.isDrawing) {
-          const rect = this.canvas.getBoundingClientRect();
-          const mouse = [
-            Math.round(e.clientX-rect.left),
-            Math.round(e.clientY-rect.top),
-          ];
+          const mouse = this.#getMouse(e);
           this.path.push(mouse);
           console.log(this.path.length)
         }
@@ -44,4 +36,13 @@ class SketchPad{
         this.isDrawing = false;
       }
     }
+
+    #getMouse = (e) => {
+      const rect = this.canvas.getBoundingClientRect();
+        return [
+          Math.round(e.clientX-rect.left),
+          Math.round(e.clientY-rect.top),
+        ];
+    }
+
   }
