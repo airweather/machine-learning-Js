@@ -1,6 +1,8 @@
 body{
   font-family: Arial, Helvetica, sans-serif;
   background-color: skyblue;
+  /* 모바일에서 창이 움직이는 것 방지(특히 애플) */
+  overscroll-behavior: none;
 }
 
 #content{
