@@ -58,6 +58,10 @@ class SketchPad{
         const loc = e.touches[0];
         this.canvas.onmouseup(loc);
       }
+      this.undoBtn.onclick = () => {
+        this.paths.pop();
+        this.#redraw();
+      }
     }
 
     #redraw = () => {
