@@ -20,6 +20,7 @@ class SketchPad{
 
     this.paths = [];
     this.isDrawing = false;
+    this.#redraw();
 
     this.#addEventListener();
   }
