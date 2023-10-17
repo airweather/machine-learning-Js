@@ -29,6 +29,16 @@
       }
 
       const sketchPad = new SketchPad(sketchPadContainer);
+
+      function start() {
+        if(student.value =="") {
+          alert("Please type your name first!");
+          return;
+        }
+        data.student = student.value;
+        student.style.display = "none";
+        sketchPadContainer.style.visibility = "visible";
+      }
     </script>
   </div>
 </body>
