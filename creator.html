@@ -59,8 +59,18 @@
         data.drawings[label] = sketchPad.paths;
         sketchPad.reset();
         index++;
-        const nextLabel = labels[index];
-        instructions.innerHTML = "Please draw a " + nextLabel;
+
+        if(index<labels.length) {
+          const nextLabel = labels[index];
+          instructions.innerHTML = "Please draw a " + nextLabel;
+        }
+        else{
+          sketchPadContainer.style.visibility="hidden";
+          instructions.innerHTML = "Thank you!";
+          advanceBtn.innerHTML = "SAVE";
+          advanceBtn.onclick=save;
+        }
+
       }
 
     </script>
