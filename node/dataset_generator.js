@@ -5,5 +5,4 @@ constants.RAW_DIR = constants.DATA_DIR + '/raw';
 constants.DATASET_DIR = constants.DATA_DIR + '/dataset';
 constants.JSON_DIR = constants.DATA_DIR + '/json';
 constants.IMG_DIR = constants.DATA_DIR + '/img';
-
-console.log(constants);
+constants.SAMPLES = constants.DATA_DIR + '/samples.json';
