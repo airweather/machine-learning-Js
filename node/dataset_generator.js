@@ -3,9 +3,9 @@ const constants = {};
 constants.DATA_DIR = '../data';
 constants.RAW_DIR = constants.DATA_DIR + '/raw';
 constants.DATASET_DIR = constants.DATA_DIR + '/dataset';
-constants.JSON_DIR = constants.DATA_DIR + '/json';
-constants.IMG_DIR = constants.DATA_DIR + '/img';
-constants.SAMPLES = constants.DATA_DIR + '/samples.json';
+constants.JSON_DIR = constants.DATASET_DIR + '/json';
+constants.IMG_DIR = constants.DATASET_DIR + '/img';
+constants.SAMPLES = constants.DATASET_DIR + '/samples.json';
 
 const fs = require('fs');
 
@@ -25,6 +25,9 @@ fileNames.forEach(fn => {
       student_name: student,
       student_id:session
     });
+
+    fs.writeFileSync(constants.JSON_DIR + '/' + id + '.json', JSON.stringify(drawings[label]));
+    
     id++;
   }
 });
