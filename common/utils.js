@@ -14,3 +14,7 @@ utils.printProgress = (count, max) => {
     count + '/' + max + ' (' + percent + ')'
   );
 }
+
+if(typeof module !== 'undefined') {
+  module.exports = utils;
+}
