@@ -1,5 +1,7 @@
 const draw = require('../common/draw');
-const draw = require('../common/constants');
+const constants = require('../common/constants');
+const utils = require('../common/utils');
+
 
 const { createCanvas } = require('canvas');
 const canvas = createCanvas(400, 400);
