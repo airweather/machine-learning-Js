@@ -7,4 +7,12 @@ function createRow(container, studentName, samples) {
   rowLabel.innerHTML = studentName;
   rowLabel.classList.add("row-label");
   row.appendChild(rowLabel);
+
+  for(let sample of samples) {
+    const {id, label} = sample;
+    const img = document.createElement("img");
+    img.src = constants.IMG_DIR + '/' + id + '.png';
+    img.classList.add("thumb");
+    row.appendChild(img);
+  }
 };
