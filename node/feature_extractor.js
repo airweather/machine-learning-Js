@@ -25,4 +25,4 @@ fs.writeFileSync(constants.FEATURES,
   JSON.stringify({
     featureNames,
     samples
-  }))
+  }));
