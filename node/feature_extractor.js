@@ -4,7 +4,7 @@ const features = require('../common/features.js')
 const fs = require('fs');
 
 const samples = JSON.parse(
-  fs.readFileSync(constants.SAMPLE)
+  fs.readFileSync(constants.SAMPLES)
 );
 
 for(const sample of samples) {
