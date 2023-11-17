@@ -3,6 +3,8 @@ const features = require('../common/features.js')
 
 const fs = require('fs');
 
+console.log("EXTRACTING FEATURES ...");
+
 const samples = JSON.parse(
   fs.readFileSync(constants.SAMPLES)
 );
@@ -26,3 +28,5 @@ fs.writeFileSync(constants.FEATURES,
     featureNames,
     samples
   }));
+
+  console.log("DONE");
