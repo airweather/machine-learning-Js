@@ -33,7 +33,10 @@
       height: 400,
       hAxis: {title:featureNames[0]},
       vAxis: {title:featureNames[1]},
-      legend: {position:'none'}
+      legend: {position:'none'},
+      explorer: {
+        actions: ['dragToZoom', 'rightClickToReset']
+      }
     };
 
     google.charts.load('current', {'packages':['corechart']});
